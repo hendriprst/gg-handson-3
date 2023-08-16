@@ -43,7 +43,7 @@ const TrendingGifs = () => {
       <header>
         <Navbar />
       </header>
-      <Container maxW="container.sm" mt={8}>
+      <Container maxW="container.sm" mt={24}>
         <Center>
           <Heading size="md" pb={4}>
             Trending Gifs
@@ -55,7 +55,7 @@ const TrendingGifs = () => {
           <Button rightIcon={<ArrowForwardIcon />} onClick={nextArrow}>Next</Button>
         </ButtonGroup>
 
-        <Carousel autoplay interval="2000" infiniteLoop showIndicators={false} selectedItem={currentIndex} showArrows={false}>
+        <Carousel autoplay interval="2000" infiniteLoop showIndicators={false} selectedItem={currentIndex} showArrows={false} showThumbs={false}>
           {loading ? (
             <Center>
               <Spinner

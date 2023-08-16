@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Image, Flex, Badge, Heading, Button, IconButton } from '@chakra-ui/react';
+import { Box, Image, Flex, Badge, Heading, Button } from '@chakra-ui/react';
 import { DownloadIcon, StarIcon } from '@chakra-ui/icons';
 
 const CardItem = ({ gif, onRemove }) => {
@@ -37,18 +37,19 @@ const CardItem = ({ gif, onRemove }) => {
               {gif.title}
             </Heading>
           </Box>
-          <Flex direction="row" justifyContent='center'>
-            <Button onClick={handleDownloadClick} type="submit" w="100%">
-              <DownloadIcon aria-label='Save GIF' color='green' w="100%" />
+          <Flex direction="row" gap={2}>
+            <Button onClick={handleDownloadClick} leftIcon={<DownloadIcon aria-label='Download Gif from original URL' />} type="submit" color="white" bg="green.400" w="100%">
+              Download
             </Button>
-            <IconButton
+            <Button
               aria-label="Remove from Favorites"
               color="red.400"
+              variant="ghost"
               onClick={() => onRemove(gif.id)}
-              ml={2}
+              disabled
             >
               <StarIcon />
-            </IconButton>
+            </Button>
           </Flex>
         </Flex>
       </Box>

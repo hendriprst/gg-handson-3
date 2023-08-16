@@ -26,11 +26,18 @@ const Navbar = () => {
   return (
     <nav>
       <Flex
-        justify='space-between'
-        align='center'
-        bg='white'
-        p='4'
-        color='black'
+        justify="space-between"
+        align="center"
+        bg="white"
+        px={{ base: 4, md: 8, lg: 24}}
+        py={4}
+        color="black"
+        position="fixed"
+        top="0"
+        left="0"
+        right="0"
+        zIndex="999"
+        width="100%"
       >
         <Box>
           <Heading color='green.400' size='md'>
@@ -52,7 +59,7 @@ const Navbar = () => {
           <IconButton
             display={{ base: 'block', md: 'none' }}
             icon={<HamburgerIcon />}
-            variant='outline'
+            variant='ghost'
             onClick={toggleModal}
           />
         </Flex>

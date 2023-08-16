@@ -3,7 +3,6 @@ import axios from "axios";
 const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_KEY;
 const BASE_URL = "https://api.giphy.com/v1/gifs";
 const LIMIT_GIFS = 20;
-const RATING_GIFS = "g";
 
 const handleApiError = (error) => {
   if (error.response) {
@@ -20,7 +19,7 @@ const handleApiError = (error) => {
 
 export const searchGifs = async (query) => {
   try {
-    const response = await axios.get(`${BASE_URL}/search?q=${query}&api_key=${GIPHY_API_KEY}&limit=${LIMIT_GIFS}&rating=${RATING_GIFS}`);
+    const response = await axios.get(`${BASE_URL}/search?q=${query}&api_key=${GIPHY_API_KEY}&limit=${LIMIT_GIFS}`);
     return response.data.data;
   } catch (error) {
     handleApiError(error);
